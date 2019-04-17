@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+</head>
+
+
+<body>
+    <div id="container"></div>
+    <script>
+            //React.createElement(theElement,attributes,child)
+            var h1Element = React.createElement('h1',{id:'header'},"Hello React");
+            var pElement = React.createElement("p",{},"This is a paragraph!");
+            var fragment = [h1Element,pElement];
+            var sectionElement = React.createElement("section",{},fragment);
+            ReactDOM.render(sectionElement, document.getElementById('container'))
+        </script>
+</body>
+
+</html>

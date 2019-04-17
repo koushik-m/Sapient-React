@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+</head>
+
+
+
+<body>
+    <div id="container"></div>
+    <script type="text/jsx">
+
+       
+        class CourseComponent extends React.Component {
+            render() {
+                return <h1>React</h1>
+            }
+        }
+        class ListOfCourse extends React.Component {
+            render() {
+                return <div><h3>{this.props.coursename}</h3>
+                <p>{this.props.duration}</p></div>
+                
+            }
+        }
+        class ListOfCoursesComponent extends React.Component {
+
+            constructor() {
+                super();
+                this.course1 = "React";
+                this.course2 = "Angular";
+                this.course3 = "Node";
+            }
+            render() {
+                return <div>
+                    <CourseComponent/>
+                    <ListOfCourse coursename={this.course1} duration="5 days"/>
+                    <ListOfCourse coursename={this.course2}duration="5 days"/>
+                    <ListOfCourse coursename={this.course3} duration="5 days"/>
+
+                </div>
+            }
+        }
+        export default ListOfCoursesComponent;
+        ReactDOM.render(<ListOfCoursesComponent/>, document.getElementById('container'))
+    </script>
+</body>
+
+</html>
